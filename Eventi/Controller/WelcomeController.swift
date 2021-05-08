@@ -29,8 +29,8 @@ class WelcomeController: UIViewController {
         
         //ui personalizzata
         //arrotondo gli angoli
-        btnLogin.layer.cornerRadius = 24
-        btnSignup.layer.cornerRadius = 24
+        UIHelper.CircleRound(view: btnLogin)
+        UIHelper.CircleRound(view: btnSignup)
         
         /*
          //Aggiungo l'ombra ai pulsanti
