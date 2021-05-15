@@ -67,10 +67,10 @@ class WelcomeController: UIViewController {
         containerMain.frame = frameIniziale
         
         //animazione posizione
-        UIView.animate(withDuration: 2.5) {
+        UIView.animate(withDuration: 2.5, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
             //stato finale dell'animazione
             self.containerMain.frame = frameFinale
-        }
+        }, completion: nil)
         
         //animazione opacità
         UIView.animate(withDuration: 2) {
@@ -79,7 +79,7 @@ class WelcomeController: UIViewController {
         }
         
         //la stessa animazione di prima ma con un delay
-        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 1, delay: 1, options: [.curveEaseInOut, .allowUserInteraction], animations: {
             //stato finale dei pulsanti
             self.containerButtons.alpha = 1
         }, completion: nil)
