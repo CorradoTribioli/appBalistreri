@@ -162,8 +162,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wz-3f-z7Q">
-                                                <rect key="frame" x="32" y="8" width="88" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wz-3f-z7Q">
+                                                <rect key="frame" x="32" y="8" width="46" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -301,8 +301,8 @@
                         <outlet property="containerGoogle" destination="Xjq-J8-HAW" id="qns-x5-h6w"/>
                         <outlet property="containerIg" destination="2wE-gZ-6ml" id="bWA-Xt-vKw"/>
                         <outlet property="containerMainLogin" destination="jtm-dd-xib" id="xkG-My-u3w"/>
+                        <outlet property="textEmail" destination="LTn-iO-rAk" id="rT9-SU-AwR"/>
                         <outlet property="textPassword" destination="kIZ-nj-glA" id="J49-pH-mob"/>
-                        <outlet property="textUserName" destination="LTn-iO-rAk" id="rT9-SU-AwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYv-pb-UNM" userLabel="First Responder" sceneMemberID="firstResponder"/>

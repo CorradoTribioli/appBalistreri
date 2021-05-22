@@ -22,7 +22,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         //Divento delegate delle text field, per essere informato di quello che fa l'utente
         self.textPassword.delegate = self
-        self.textUserName.delegate = self
+        self.textEmail.delegate = self
 
         //configuro il tap recognizer
         self.tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
@@ -39,11 +39,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //MARK: Textfield delegate
+//MARK: Textfield delegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //questa funzione delegate viene richiamata quando l'utente preme 'invio' dentro a una text field
         
-        if textField == self.textUserName {
+        if textField == self.textEmail {
             // ha premuto invio dal campo username
         
             if textField.text != "" {
@@ -60,7 +60,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 textField.resignFirstResponder()
                 self.btnLogin()
             }
-
             
         }
         
@@ -76,13 +75,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     
-    //MARK: - Outlets
+//MARK: - Outlets
     //button accedi
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var containerMainLogin: UIView!
     
     //email e password
-    @IBOutlet weak var textUserName: UITextField!
+    @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var textPassword: UITextField!
     
     //icone social
@@ -96,17 +95,30 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
      //MARK: - Action
     @IBAction func btnLogin(_ sender: Any? = nil) {
-        if textUserName.text == "lary" , textPassword.text == "password" {
-        goToHome()
-        }
-        else {
-            showInvalidLogicAlert()
+        //l'indirizzo dell'API da richiamare
+        let url = "https://edu.davidebalistreri.it/app/login.php"
+        
+        //preparo i parametri da inviare al srver
+        var parameters = DBDictionary()
+        parameters["email"] = textEmail.text
+        parameters["password"] = textPassword.text
+        
+        DBNetworking.jsonPost(url: url, authToken: nil, parameters: parameters) {
+            //questa parte di codice viene eseguita in modo asincrono non appena arriva la risposta del server. l'oggetto 'response' contiene proprio i dati inviati dal server
+            (response) in
+            if response.success {
+                //login riuscito
+                self.goToHome()
+            }
+            else {
+                //login fallito
+                self.showInvalidLogicAlert()
+            }
         }
     }
     
     
-    //MARK: - Private Function
-    
+//MARK: - Private Function
     private func goToHome() {
         //prendo lo storybord dove risiede l'homeController
             //è lo stesso storyboard di LoginController
