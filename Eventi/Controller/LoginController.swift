@@ -24,8 +24,20 @@ class LoginController: UIViewController, UITextFieldDelegate {
         self.textPassword.delegate = self
         self.textUserName.delegate = self
 
- 
+        //configuro il tap recognizer
+        self.tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
+        self.view.addGestureRecognizer(self.tapRecognizer)
     }
+
+    
+    //impostazioni per spostare il mainContainer
+    var frameIniziale = CGRect.zero
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //memorizzo il frame iniziale del containeMain per spostare poi la tastiera
+        self.frameIniziale = self.containerMainLogin.frame
+    }
+    
     
     //MARK: Textfield delegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -55,9 +67,19 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    
+    //riconosce le gesture per poter chiedere la tastiera liccando fuori dai campoi di testo
+    var tapRecognizer = UITapGestureRecognizer()
+    
+    
+    
+    
+    
     //MARK: - Outlets
     //button accedi
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var containerMainLogin: UIView!
     
     //email e password
     @IBOutlet weak var textUserName: UITextField!
@@ -70,6 +92,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     
+    
+    
      //MARK: - Action
     @IBAction func btnLogin(_ sender: Any? = nil) {
         if textUserName.text == "lary" , textPassword.text == "password" {
@@ -79,6 +103,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
             showInvalidLogicAlert()
         }
     }
+    
+    
+    //MARK: - Private Function
     
     private func goToHome() {
         //prendo lo storybord dove risiede l'homeController
@@ -93,8 +120,37 @@ class LoginController: UIViewController, UITextFieldDelegate {
         self.present(home!, animated: true)
     }
     
+    
+    // allert credenziali errate
     private func showInvalidLogicAlert() {
         AlertHelper.showSimpleAlert(message: "Credenziali errate‼️", viewController: self)
     }
     
+    
+    
+    //funzione mainContainer che si alza
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //sposto la view principale verso l'alto con animazione
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+             self.containerMainLogin.frame.origin.y = self.frameIniziale.origin.y - 170
+        }, completion: nil)
+       
+    }
+    
+    //funzione mainContainer che si abbassa
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //sposto la view principale nel punto d'origine con l'animazione
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.containerMainLogin.frame.origin.y = self.frameIniziale.origin.y
+        }, completion: nil)
+    }
+
+    
+    //tab ovunque per chiudere la tastiera
+    @objc private func closeKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    
+
 }
