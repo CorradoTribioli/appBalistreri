@@ -7,7 +7,8 @@
 
 import Foundation
 
-class User {
+//utilizziamo il protovollo 'Cordable' per convertire automaticamenteun Dictionary in uno User, e viceversa
+class User : Codable{
         var id_utente: Int?
         var auth_token: String?
         var email: String?

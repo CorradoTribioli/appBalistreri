@@ -108,7 +108,28 @@ class LoginController: UIViewController, UITextFieldDelegate {
             (response) in
             if response.success {
                 //login riuscito
-                self.goToHome()
+                
+                //mi aspetto che il server abbia inviato un dictioary
+                if let dictionary = response.data as? DBDictionary {
+                    //prendo l'oggetto 'data' che a sua volta è un dictionary
+                    if let data = dictionary["data"] as? DBDictionary {
+                        
+                        //riconcerto il dictionary in un oggetto JSON
+                        let json = try? JSONSerialization.data(withJSONObject: data, options: [])
+                        
+                        //con un oggetto JSON di tipo  "Data" possiamo ora convertire automaticamente e ottenere un oggetto "User"
+                        let user = try? JSONDecoder().decode(User.self, from: json ?? Data())
+                        
+                        //Salvo l'utente connesso sul database dell'app
+                        LoginHelper.loggedUser = user
+                        LoginHelper.save()
+                        
+                        //vado sulla home
+                        self.goToHome()
+                        
+                    }
+                }
+                
             }
             else {
                 //login fallito
