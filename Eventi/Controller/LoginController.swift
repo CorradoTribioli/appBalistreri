@@ -141,16 +141,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
 //MARK: - Private Function
     private func goToHome() {
-        //prendo lo storybord dove risiede l'homeController
+        //prendo lo storybord dove risiede la scehrmata Home
             //è lo stesso storyboard di LoginController
         let storyboard = self.storyboard
         
-        //istanzio il view controller con Storyboard ID = "HomeController"
-        let home = storyboard?.instantiateViewController(withIdentifier: "HomeController")
+        //istanzio il view controller con Storyboard ID = "HomeTabBar"
+        let home = storyboard?.instantiateViewController(withIdentifier: "HomeTabBar")
         
         //presento il view controller
         home?.modalPresentationStyle = .fullScreen
-        self.present(home!, animated: true)
+        
+        self.present(home!, animated: false)
     }
     
     

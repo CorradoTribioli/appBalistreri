@@ -36,12 +36,12 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="GoToWelcome" animates="NO" id="VSQ-tB-Zae"/>
-                        <segue destination="6wQ-gI-M6L" kind="presentation" identifier="GoToHome" animates="NO" id="Vds-Uq-tKM"/>
+                        <segue destination="Y2a-4K-TZy" kind="presentation" identifier="GoToHome" id="Qds-JS-3wG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="546-ea-2kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="23"/>
+            <point key="canvasLocation" x="-903" y="-11"/>
         </scene>
         <!--Welcome Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -260,15 +260,15 @@
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xjq-J8-HAW">
                                                 <rect key="frame" x="80" y="80" width="60" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqU-k4-3by">
-                                                        <rect key="frame" x="0.0" y="-8" width="68" height="68"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="dun-Ry-UV7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <rect key="frame" x="0.0" y="10" width="60" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,11 +278,11 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qM-Hd-z3O">
-                                                        <rect key="frame" x="0.0" y="-7" width="68" height="68"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instagram" translatesAutoresizingMaskIntoConstraints="NO" id="r16-uL-bm5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
+                                                        <rect key="frame" x="0.0" y="1" width="60" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
@@ -293,11 +293,11 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsU-Mt-ic3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
+                                                        <rect key="frame" x="0.0" y="1" width="60" height="59"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-js-Ok3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
@@ -332,9 +332,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYv-pb-UNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="-340"/>
+            <point key="canvasLocation" x="782.60869565217399" y="-340.17857142857139"/>
         </scene>
-        <!--Home Controller-->
+        <!--Hexound-->
         <scene sceneID="Zx6-h5-xsm">
             <objects>
                 <viewController storyboardIdentifier="HomeController" id="6wQ-gI-M6L" customClass="HomeController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
@@ -357,13 +357,104 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zkJ-3i-JTM"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Hexound" id="gfc-aM-BLy"/>
                     <connections>
                         <outlet property="WelcomeLabel" destination="nb2-Ge-H1H" id="qZ2-qI-sn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLO-Ta-w09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="362"/>
+            <point key="canvasLocation" x="1828.985507246377" y="361.60714285714283"/>
+        </scene>
+        <!--Profilo-->
+        <scene sceneID="iKW-xN-SPc">
+            <objects>
+                <viewController id="FEt-7M-gle" customClass="ProfileController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgs-T3-iom">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-C5-GI1" userLabel="bgGradient">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-Xg-V6A">
+                                <rect key="frame" x="36" y="218" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.87450980389999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogout:" destination="FEt-7M-gle" eventType="touchUpInside" id="llg-Fe-RvX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IPf-TP-l76"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profilo" id="P3A-NO-kRS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFd-oa-GOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828.985507246377" y="1080.8035714285713"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="fdy-bB-bib">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TS6-uG-Mdv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="FFO-ka-gFD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d2J-uW-LkW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6wQ-gI-M6L" kind="relationship" relationship="rootViewController" id="CRn-xF-Tpp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74A-bz-Vfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.84057971014499" y="361.60714285714283"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="bdx-P5-Thf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eav-Sx-HPb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="Zb6-vh-SYP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gWP-x2-Ra3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEt-7M-gle" kind="relationship" relationship="rootViewController" id="N7N-1K-1oT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2Z-Tc-dUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.84057971014499" y="1080.8035714285713"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pGH-Yr-Pae">
+            <objects>
+                <tabBarController storyboardIdentifier="HomeTabBar" automaticallyAdjustsScrollViewInsets="NO" id="Y2a-4K-TZy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uRo-Lp-kim">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TS6-uG-Mdv" kind="relationship" relationship="viewControllers" id="Ode-5n-alj"/>
+                        <segue destination="eav-Sx-HPb" kind="relationship" relationship="viewControllers" id="ft1-eY-zyQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlZ-3a-NHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.6956521739130448" y="721.20535714285711"/>
         </scene>
     </scenes>
     <resources>

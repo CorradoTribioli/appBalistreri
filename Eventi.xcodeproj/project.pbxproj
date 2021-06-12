@@ -20,6 +20,8 @@
 		1B87D7CD2646A97E00CC68BB /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87D7CC2646A97E00CC68BB /* UIHelper.swift */; };
 		1B889F22264FC8A700D9B47D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F21264FC8A700D9B47D /* HomeController.swift */; };
 		1B889F24264FDE7600D9B47D /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F23264FDE7600D9B47D /* AlertHelper.swift */; };
+		1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FD82674A3F800788F67 /* ProfileController.swift */; };
+		1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FDA2674AECF00788F67 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		1B87D7CC2646A97E00CC68BB /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		1B889F21264FC8A700D9B47D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1B889F23264FDE7600D9B47D /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		1BFD6FD82674A3F800788F67 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		1BFD6FDA2674AECF00788F67 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				1B00473D2659202E0053DEFD /* Users.swift */,
+				1BFD6FDA2674AECF00788F67 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				1B87D7C726469E6600CC68BB /* LoginController.swift */,
 				1B889F21264FC8A700D9B47D /* HomeController.swift */,
 				1B00F17F266B89F8009F4D0E /* SplashController.swift */,
+				1BFD6FD82674A3F800788F67 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,9 +225,11 @@
 				1B889F24264FDE7600D9B47D /* AlertHelper.swift in Sources */,
 				1B1708B9263416A400ACD20F /* WelcomeController.swift in Sources */,
 				1B889F22264FC8A700D9B47D /* HomeController.swift in Sources */,
+				1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */,
 				1B00F180266B89F8009F4D0E /* SplashController.swift in Sources */,
 				1B87D7C826469E6600CC68BB /* LoginController.swift in Sources */,
 				1B1708B7263416A400ACD20F /* AppDelegate.swift in Sources */,
+				1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */,
 				1B87D7CD2646A97E00CC68BB /* UIHelper.swift in Sources */,
 				1B00473B265919E80053DEFD /* DBNetworking.swift in Sources */,
 				1B00F17C266B7ACC009F4D0E /* LoginHelper.swift in Sources */,
