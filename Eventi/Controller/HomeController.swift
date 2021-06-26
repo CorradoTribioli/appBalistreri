@@ -97,14 +97,14 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //questa funzione viene richiamata automaricamente dalla table view
         //quando l'utente seleziona una cella
         
-        //istamzio la nuova schermata di dettaglio  dell'evento
+        //istanzio la nuova schermata di dettaglio  dell'evento
         let nextController = self.storyboard?.instantiateViewController(withIdentifier: "EventController") as! EventController
         
         //pendo l'evento associalo alla cella selezionata
         let event = self.eventsToShow[indexPath.row]
         
         //lo passo alla schermata del dettaglio
-        nextController.EventToShow = event
+        nextController.eventToShow = event
         
         //nascondo la tab bar
         nextController.hidesBottomBarWhenPushed = true

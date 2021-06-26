@@ -10,10 +10,17 @@ import UIKit
 
 class ProfileController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    //l'utente
+    var UserToShow: User!
+    
+    
+    
+    // MARK: - Outlets
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var BirthDateLabel: UILabel!
+    @IBOutlet weak var CityLabel: UILabel!
+    
+    
     
     // MARK: - Actions
     @IBAction func btnLogout(_ sender: Any) {
@@ -24,6 +31,11 @@ class ProfileController: UIViewController {
         //Torno alla pagina di Splash
         //chiudendo la modale complessiva della TabBar
         self.dismiss(animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     
 
