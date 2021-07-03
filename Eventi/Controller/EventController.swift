@@ -14,6 +14,9 @@ class EventController: UIViewController {
     var eventToShow: Event!
     
     
+    //oggetto  di ios usato per chiedere la posizione dell'utente
+    private let manager = CLLocationManager()
+    
     //MARK: - Outlets
     @IBOutlet weak var btnPurchase: UIButton!
     
@@ -33,7 +36,7 @@ class EventController: UIViewController {
     @IBOutlet weak var ViewLabel: UILabel!
     @IBOutlet weak var CommentsLabel: UILabel!
     
-    @IBOutlet weak var mapEvent: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapAdress: UILabel!
     
     
@@ -55,11 +58,25 @@ class EventController: UIViewController {
         
         //dati dell'autore
         self.authorEvent.text = self.eventToShow.creatore?.nomeCompleto
-    self.imageAuthor.setImageWithUrlString(self.eventToShow.creatore?.avatar_url)
+        self.imageAuthor.setImageWithUrlString(self.eventToShow.creatore?.avatar_url)
         UIHelper.CircleRound(view: self.imageAuthor)
         
         //dati map
         self.mapAdress.text = self.eventToShow.indirizzo
+        //metto il pin sulla mappa
+        let pin = MapPin()
+        pin.title = self.eventToShow.nome
+        pin.subtitle = self.eventToShow.indirizzo
+        pin.coordinate = CLLocationCoordinate2D(latitude: self.eventToShow.lat ?? 0, longitude: self.eventToShow.lng ?? 0)
+        self.mapView.addAnnotation(pin)
+        //avvicino la telecamera
+        let camera = self.mapView.camera
+        camera.altitude = 800
+        camera.centerCoordinate = pin.coordinate
+        //mostro la posizione dell'utente
+        self.mapView.showsUserLocation = true
+        manager.requestWhenInUseAuthorization()
+        
         
         //likes comments views
         let views = self.eventToShow.numero_visualizzazioni ?? 0
@@ -93,6 +110,9 @@ class EventController: UIViewController {
         //cambio il testo dei pulsanti
         btnPurchase.setTitle(priceEurosStr, for: .normal)
         btnAuthor.setTitle("", for: .normal)
+        
+        
+        
     }
     
 
@@ -104,6 +124,9 @@ class EventController: UIViewController {
     
     //istanzio la nuova schermata del profilo
     @IBAction func btnAuthor(_ sender: Any) {
-        
+        let storyboard = self.storyboard
+        let profile = storyboard?.instantiateViewController(withIdentifier: "ProfileController")
+        profile?.modalPresentationStyle = .fullScreen
+        //self.navigationController?.pushViewController(nextController, animated: true)
     }
 }
