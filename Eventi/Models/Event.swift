@@ -24,3 +24,34 @@ class Event : Codable {
    var numero_like: Int?
    var creatore: User?
 }
+
+extension Event {
+    var stringaPrezzo: String {
+        //converto il prezzo da int a string
+        let priceCents = self.prezzo ?? 0
+        var priceEurosStr = ""
+        if priceCents == 0 {
+            priceEurosStr = "Acquista Gratis!"
+        }
+        else {
+            let priceEuros = Double(priceCents) / 100
+            priceEurosStr = "Acquista a € \(priceEuros)"
+        }
+        return priceEurosStr
+    }
+        var stringDataOra: String {
+            let formatter = DateFormatter()
+            
+            //questo è il formato della data come la manda il server
+            formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:SS"
+            
+            //converto la stringa della datain un oggetto "Date"
+            let date = formatter.date(from: timestamp ?? "")
+            
+            //decido il formato della data che voglio
+            formatter.dateFormat = "dd/MM/yyyy' ' HH:mm:SS"
+            return formatter.string(from: date ?? Date())
+        }
+}
+
+

@@ -23,6 +23,7 @@
 		1B889F22264FC8A700D9B47D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F21264FC8A700D9B47D /* HomeController.swift */; };
 		1B889F24264FDE7600D9B47D /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F23264FDE7600D9B47D /* AlertHelper.swift */; };
 		1BA0C28826904D4000AFF72F /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0C28726904D4000AFF72F /* MapPin.swift */; };
+		1BA0C28B26905F2500AFF72F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0C28A26905F2500AFF72F /* EventCell.swift */; };
 		1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FD82674A3F800788F67 /* ProfileController.swift */; };
 		1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FDA2674AECF00788F67 /* Event.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		1B889F21264FC8A700D9B47D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1B889F23264FDE7600D9B47D /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		1BA0C28726904D4000AFF72F /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		1BA0C28A26905F2500AFF72F /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1BFD6FD82674A3F800788F67 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		1BFD6FDA2674AECF00788F67 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 		1B87D7C926469EA900CC68BB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1BA0C28926905EF000AFF72F /* View */,
 				1B1708B8263416A400ACD20F /* WelcomeController.swift */,
 				1B87D7C726469E6600CC68BB /* LoginController.swift */,
 				1B889F21264FC8A700D9B47D /* HomeController.swift */,
@@ -165,6 +168,14 @@
 				1B00F17B266B7ACC009F4D0E /* LoginHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1BA0C28926905EF000AFF72F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0C28A26905F2500AFF72F /* EventCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				1B6E65B026871F5A00FE7899 /* UIImageViewExtension.swift in Sources */,
 				1B1708B7263416A400ACD20F /* AppDelegate.swift in Sources */,
 				1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */,
+				1BA0C28B26905F2500AFF72F /* EventCell.swift in Sources */,
 				1B87D7CD2646A97E00CC68BB /* UIHelper.swift in Sources */,
 				1B00473B265919E80053DEFD /* DBNetworking.swift in Sources */,
 				1B00F17C266B7ACC009F4D0E /* LoginHelper.swift in Sources */,

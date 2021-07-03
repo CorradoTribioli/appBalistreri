@@ -71,7 +71,7 @@ class EventController: UIViewController {
         self.mapView.addAnnotation(pin)
         //avvicino la telecamera
         let camera = self.mapView.camera
-        camera.altitude = 800
+        camera.altitude = 1000
         camera.centerCoordinate = pin.coordinate
         //mostro la posizione dell'utente
         self.mapView.showsUserLocation = true
@@ -92,23 +92,11 @@ class EventController: UIViewController {
         
         
         //compongo la stringa del prezzo
-        let priceCents = self.eventToShow.prezzo ?? 0
-        
-        var priceEurosStr = ""
-        
-        
-        if priceCents == 0 {
-            priceEurosStr = "Acquista Gratis!"
-        }
-        else {
-            let priceEuros = Double(priceCents) / 100
-            priceEurosStr = "Acquista a € \(priceEuros)"
-            
-        }
+        let price = self.eventToShow.stringaPrezzo
         
         
         //cambio il testo dei pulsanti
-        btnPurchase.setTitle(priceEurosStr, for: .normal)
+        btnPurchase.setTitle(price, for: .normal)
         btnAuthor.setTitle("", for: .normal)
         
         

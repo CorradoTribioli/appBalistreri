@@ -79,20 +79,22 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //prendo la cella prototipata sullo storyboard
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! EventCell
         
         //prendo l'evento da rappresentare in questa cella
         let eventToShow = eventsToShow[indexPath.row]
         
         //configuro la UI della cella
-        cell.textLabel?.text = eventToShow.nome
+        cell.labelNomeEvento.text = eventToShow.nome
+        cell.labelIndirizzo.text = eventToShow.stringaPrezzo
+        cell.labelPrezzo.text = eventToShow.stringaPrezzo
+        cell.labelData.text = eventToShow.stringDataOra
+        //cell.imgEvent.text = eventToShow.cover_url
         
-        
-        //restituisco alla tale view
         return cell
     }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //questa funzione viene richiamata automaricamente dalla table view
         //quando l'utente seleziona una cella
