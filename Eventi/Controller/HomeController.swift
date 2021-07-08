@@ -89,7 +89,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.labelIndirizzo.text = eventToShow.stringaPrezzo
         cell.labelPrezzo.text = eventToShow.stringaPrezzo
         cell.labelData.text = eventToShow.stringDataOra
-        //cell.imgEvent.text = eventToShow.cover_url
+        cell.imgEvent.setImageWithUrlString(eventToShow.cover_url)
         
         return cell
     }
