@@ -24,8 +24,10 @@ class User : Codable{
 
 extension User {
     //concateno nome e cognome se esistono
-    var nomeCompleto: String {
+    var nomeCompleto: String{
+        
         if let nome = nome, let cognome = cognome {
+            
             return "\(nome) \(cognome)"
         }
         else if let nome = nome{
@@ -39,7 +41,5 @@ extension User {
         else {
             return ""
         }
-        
-        return ""
     }
 }

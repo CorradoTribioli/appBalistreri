@@ -21,6 +21,11 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //cambio il colore della tabBar
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         let nome = LoginHelper.loggedUser?.nome ?? ""
         self.WelcomeLabel.text = "Benvenuto \(nome)"
         
@@ -86,10 +91,11 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //configuro la UI della cella
         cell.labelNomeEvento.text = eventToShow.nome
-        cell.labelIndirizzo.text = eventToShow.stringaPrezzo
+        cell.labelIndirizzo.text = eventToShow.indirizzo
         cell.labelPrezzo.text = eventToShow.stringaPrezzo
         cell.labelData.text = eventToShow.stringDataOra
         cell.imgEvent.setImageWithUrlString(eventToShow.cover_url)
+        
         
         return cell
     }

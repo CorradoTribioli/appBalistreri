@@ -32,20 +32,6 @@ class WelcomeController: UIViewController {
         UIHelper.CircleRound(view: btnLogin)
         UIHelper.CircleRound(view: btnSignup)
         
-        /*
-         //Aggiungo l'ombra ai pulsanti
-         btnLogin.layer.shadowOpacity = 0.5
-         btnLogin.layer.shadowRadius = 8
-         */
-        
-        /*aggiungo bordo
-         //creo colore personalizzato in RGB
- 
-        let coloreCustom = UIColor (red: 58/255, green: 58/255, blue: 58/255, alpha: 1)
-        //aggiungo un bordo
-        btnLogin.layer.borderWidth = 2
-        btnLogin.borderColor = coloreCustom.cgColor
-         */
         
     }
     

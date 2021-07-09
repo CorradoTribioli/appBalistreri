@@ -112,9 +112,12 @@ class EventController: UIViewController {
     
     //istanzio la nuova schermata del profilo
     @IBAction func btnAuthor(_ sender: Any) {
-        let storyboard = self.storyboard
-        let profile = storyboard?.instantiateViewController(withIdentifier: "ProfileController")
-        profile?.modalPresentationStyle = .fullScreen
-        //self.navigationController?.pushViewController(nextController, animated: true)
+        let nextController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        
+        let user = self.eventToShow.creatore
+        
+        nextController.userToShow = user
+        self.navigationController?.pushViewController(nextController, animated: true )
+
     }
 }

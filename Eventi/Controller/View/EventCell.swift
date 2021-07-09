@@ -24,6 +24,7 @@ class EventCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     UIHelper.CircleRound(view: self.imgEvent)
+        contentView.backgroundColor = UIColor.init(red: 0.14, green: 0.14, blue: 0.14, alpha: 1)
     }
 
     

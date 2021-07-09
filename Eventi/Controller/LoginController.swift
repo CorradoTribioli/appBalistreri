@@ -47,7 +47,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             // ha premuto invio dal campo username
         
             if textField.text != "" {
-                //sposto il focus autmaticamente sul campo della password
+                //sposto il focus automaticamente sul campo della password
                 self.textPassword.becomeFirstResponder()
             }
         }
@@ -68,7 +68,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     
-    //riconosce le gesture per poter chiedere la tastiera liccando fuori dai campoi di testo
+    //riconosce le gesture per poter chiudere la tastiera cliccando fuori dai campi di testo
     var tapRecognizer = UITapGestureRecognizer()
     
     
@@ -184,7 +184,4 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @objc private func closeKeyboard() {
         self.view.endEditing(true)
     }
-    
-    
-
 }
