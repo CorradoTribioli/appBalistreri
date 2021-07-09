@@ -22,6 +22,11 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //cambio il colore della tabBar
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    
         self.nameLabel.text = userToShow.nomeCompleto
         self.birthDateLabel.text = userToShow.data_nascita
         self.cityLabel.text = userToShow.citta
