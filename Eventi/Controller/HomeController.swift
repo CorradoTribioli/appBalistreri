@@ -21,9 +21,10 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cambio il colore della tabBar
-        tabBarController?.tabBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.barTintColor = UIColor.black
+        //cambio il colore della tabBar e navigationBar
+        self.tabBarController?.tabBar.barTintColor = UIColor.black
+        self.tabBarController?.tabBar.tintColor = .white
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         let nome = LoginHelper.loggedUser?.nome ?? ""
