@@ -108,7 +108,23 @@ class EventController: UIViewController {
     //MARK: - Actions
 
     @IBAction func btnPurchase(_ sender: Any) {
-    }
+        if CartHelper.items.contains(self.eventToShow) {
+            // non permetto di aggiungere piu i una volta lo stesso evento
+            
+            // mostro l'alert di avviso
+            AlertHelper.showSimpleAlert(title: "Hai già aggiunto il biglietto 🐒", message: nil, viewController: self);
+            
+            return
+        }
+        
+        //aggiungo l'evento al carello
+        CartHelper.items.append(self.eventToShow)
+        
+        // mostro l'alert di conferma
+        AlertHelper.showSimpleAlert(title: "Aggiunto al carrello 🐒", message: "Sei forte oh", viewController: self)
+        
+        
+    }   
     
     //istanzio la nuova schermata del profilo
     @IBAction func btnAuthor(_ sender: Any) {
