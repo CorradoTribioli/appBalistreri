@@ -278,7 +278,7 @@
                                                 <color key="highlightedColor" red="0.30997067080000001" green="0.88235644040000005" blue="0.80442299179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xjq-J8-HAW">
-                                                <rect key="frame" x="79" y="89" width="60" height="60"/>
+                                                <rect key="frame" x="78" y="89" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqU-k4-3by">
@@ -414,7 +414,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="address" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-Kf-lhS">
-                                                    <rect key="frame" x="140" y="38" width="23" height="22"/>
+                                                    <rect key="frame" x="140" y="38" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -439,12 +439,13 @@
                     <navigationItem key="navigationItem" title="Hexound" id="gfc-aM-BLy">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" width="86.333333333333258" id="MhA-Ai-62o">
                             <connections>
-                                <segue destination="4N5-0C-MR5" kind="presentation" id="rvu-eS-1hf"/>
+                                <segue destination="fyo-qv-QNg" kind="presentation" id="rvu-eS-1hf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="WelcomeLabel" destination="nb2-Ge-H1H" id="qZ2-qI-sn6"/>
+                        <outlet property="iconCart" destination="MhA-Ai-62o" id="L9j-L1-whU"/>
                         <outlet property="tableView" destination="HC0-Cu-7yK" id="XRb-i0-gYi"/>
                     </connections>
                 </viewController>
@@ -480,7 +481,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-Gu-ixN">
-                                                <rect key="frame" x="157" y="37" width="85" height="21"/>
+                                                <rect key="frame" x="157" y="37" width="84" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -633,47 +634,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guR-1g-BWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729.2307692307691" y="361.13744075829385"/>
+            <point key="canvasLocation" x="2845" y="712"/>
         </scene>
-        <!--Cart Controller-->
+        <!--Carrello-->
         <scene sceneID="afV-lX-h0y">
             <objects>
-                <viewController id="4N5-0C-MR5" customClass="CartController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4N5-0C-MR5" customClass="CartController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z4a-jb-WLA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="3BI-BN-hMg" userLabel="bgGradient">
-                                <rect key="frame" x="-12" y="-39" width="414" height="896"/>
+                                <rect key="frame" x="-12" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-Jb-ryV">
-                                <rect key="frame" x="152" y="29" width="86" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numero biglietti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKh-lm-7pw">
-                                <rect key="frame" x="44" y="92" width="140" height="22"/>
+                                <rect key="frame" x="44" y="131" width="140" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Costo totale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zik-QN-ql6">
-                                <rect key="frame" x="44" y="122" width="109" height="22"/>
+                                <rect key="frame" x="44" y="161" width="109" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cVQ-Qz-3JX">
-                                <rect key="frame" x="8" y="236" width="374" height="418"/>
+                                <rect key="frame" x="8" y="360" width="374" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.51477891571667733" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8Nn-lN-O7d" style="IBUITableViewCellStyleDefault" id="D5P-s9-I95">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="8Nn-lN-O7d" style="IBUITableViewCellStyleDefault" id="D5P-s9-I95">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D5P-s9-I95" id="mKD-We-DRd">
@@ -693,31 +687,55 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-c2-5hA">
-                                <rect key="frame" x="192" y="92" width="28" height="22"/>
+                                <rect key="frame" x="192" y="131" width="28" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8T-ms-pSr">
-                                <rect key="frame" x="169" y="122" width="28" height="22"/>
+                                <rect key="frame" x="169" y="161" width="189" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PR-Xj-uQc">
+                                <rect key="frame" x="44" y="232" width="330" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Svuota carello">
+                                    <fontDescription key="titleFontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnClearCart:" destination="4N5-0C-MR5" eventType="touchUpInside" id="5iE-A1-DJd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ECv-DO-l7Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Carrello" id="469-Fq-WaN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="xmark" catalog="system" id="tYr-hx-oF6">
+                            <connections>
+                                <action selector="btnClose:" destination="4N5-0C-MR5" id="vkT-Y5-cny"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" id="AkV-kd-EN7">
+                            <connections>
+                                <action selector="btnNext:" destination="4N5-0C-MR5" id="FMh-YG-gsV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lblItemsCount" destination="qwK-c2-5hA" id="ExV-Ja-NUh"/>
                         <outlet property="lblTotalPrice" destination="o8T-ms-pSr" id="oE0-ns-Xln"/>
+                        <outlet property="tableView" destination="cVQ-Qz-3JX" id="FwW-qd-0Vj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kae-jH-i7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3820" y="360.42654028436016"/>
+            <point key="canvasLocation" x="3773.8461538461538" y="10.663507109004739"/>
         </scene>
         <!--Profilo-->
         <scene sceneID="iKW-xN-SPc">
@@ -783,7 +801,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFd-oa-GOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828.985507246377" y="1080.8035714285713"/>
+            <point key="canvasLocation" x="1828" y="1445"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fdy-bB-bib">
@@ -825,7 +843,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2Z-Tc-dUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.84057971014499" y="1080.8035714285713"/>
+            <point key="canvasLocation" x="917" y="1444"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pGH-Yr-Pae">
@@ -848,7 +866,27 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlZ-3a-NHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.6956521739130448" y="721.20535714285711"/>
+            <point key="canvasLocation" x="8" y="870"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WGz-rK-5sl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fyo-qv-QNg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" id="BqJ-5F-lVK">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4N5-0C-MR5" kind="relationship" relationship="rootViewController" id="ebf-cm-pID"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-x2-ms4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2845" y="11"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.30997067080000001" green="0.88235644040000005" blue="0.80442299179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -866,6 +904,7 @@
         <image name="google" width="200" height="200"/>
         <image name="instagram" width="200" height="200"/>
         <image name="logo" width="143" height="143"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

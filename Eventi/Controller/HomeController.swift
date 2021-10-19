@@ -16,6 +16,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: - Outlet
     @IBOutlet weak var WelcomeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var iconCart: UIBarButtonItem!
     
     
     
@@ -36,6 +37,25 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //aggiorno gli eventi da visualizzare
         self.updateEvents()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // la pagina sta comparendo (o ricomparendo) sullo schermo
+        
+        // Aggiorno l'icona del carrello
+        if #available(iOS 13.0, *) {
+            if CartHelper.items.count > 0 {
+                // Carrello pieno
+                iconCart.image = UIImage(systemName: "cart.fill")
+            } else {
+                iconCart.image = UIImage(systemName: "cart")
+            }
+        }
+        
+        
+        
     }
     
     //MARK: - Funzioni

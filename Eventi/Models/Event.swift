@@ -54,9 +54,14 @@ extension Event {
         }
 }
 
-extension Event : Equatable {
+extension Event : Equatable, Comparable {
+    
+    
     static func == (lhs: Event, rhs: Event) -> Bool {
         return lhs.id == rhs.id
+    }
+    static func < (lhs: Event, rhs: Event) -> Bool {
+        return (lhs.id ?? 0) < (rhs.id ?? 0)
     }
     
     
