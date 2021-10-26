@@ -31,13 +31,14 @@ extension Event {
         let priceCents = self.prezzo ?? 0
         var priceEurosStr = ""
         if priceCents == 0 {
-            priceEurosStr = "Acquista Gratis!"
+            priceEurosStr = "Gratis"
         }
         else {
             let priceEuros = Double(priceCents) / 100
-            priceEurosStr = "Acquista a € \(priceEuros)"
+            priceEurosStr = String(format: "%.02f", priceEuros)
+            priceEurosStr = priceEurosStr.replacingOccurrences(of: ".", with: ",")
         }
-        return priceEurosStr
+        return "\(priceEurosStr) €"
     }
         var stringDataOra: String {
             let formatter = DateFormatter()

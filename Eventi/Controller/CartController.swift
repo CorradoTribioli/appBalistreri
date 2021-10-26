@@ -74,6 +74,8 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let event = CartHelper.items[indexPath.row]
         cell.textLabel?.text = event.nome
+        let detPrice = event.stringaPrezzo
+        cell.detailTextLabel?.text = detPrice
         return cell
     }
     
@@ -82,6 +84,7 @@ class CartController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // 1. cancello l'evento dal carrello
         CartHelper.items.remove(at: indexPath.row)
+        
         
         // 2. Ricarico la pagina
         self.updateController()
