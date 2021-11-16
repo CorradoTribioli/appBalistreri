@@ -19,6 +19,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var img_profile: UIImageView!
     @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var btnProfileSetting: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

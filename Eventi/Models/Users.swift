@@ -41,5 +41,15 @@ extension User {
         else {
             return ""
         }
+        
+        
     }
+    var birthDate: Date {
+        // converto la data di nascita
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let stringa = data_nascita ?? ""
+        return formatter.date(from: stringa) ?? Date()
+    }
+    
 }
