@@ -3,6 +3,7 @@
 //  App Design
 //
 //  Created by Davide Balistreri on 08/02/18.
+//  Updated on 11/22/21.
 //  Copyright © 2018. All rights reserved.
 //
 
@@ -27,22 +28,22 @@ class DBNetworking {
     
     /// Effettua una chiamata web di tipo "GET" nel formato JSON
     static func jsonGet(url: String, authToken: String?, parameters: [String: Any]?, completion: DBNetworkingCompletion?) {
-        jsonRequest(url: url, requestType: "get", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
+        jsonRequest(url: url, requestType: "GET", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
     }
     
     /// Effettua una chiamata web di tipo "POST" nel formato JSON
     static func jsonPost(url: String, authToken: String?, parameters: [String: Any]?, completion: DBNetworkingCompletion?) {
-        jsonRequest(url: url, requestType: "post", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
+        jsonRequest(url: url, requestType: "POST", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
     }
     
     /// Effettua una chiamata web di tipo "PUT" nel formato JSON
     static func jsonPut(url: String, authToken: String?, parameters: [String: Any]?, completion: DBNetworkingCompletion?) {
-        jsonRequest(url: url, requestType: "put", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
+        jsonRequest(url: url, requestType: "PUT", authToken: authToken, parameters: parameters, multipartFiles: nil, completion: completion)
     }
     
     /// Effettua una chiamata web di tipo "multipart POST" nel formato JSON
     static func jsonMultipartPost(url: String, authToken: String?, parameters: [String: Any]?, multipartFiles: [DBNetworkingMultipartFile]?, completion: DBNetworkingCompletion?) {
-        jsonRequest(url: url, requestType: "post", authToken: authToken, parameters: parameters, multipartFiles: multipartFiles, completion: completion)
+        jsonRequest(url: url, requestType: "POST", authToken: authToken, parameters: parameters, multipartFiles: multipartFiles, completion: completion)
     }
     
     
@@ -60,70 +61,60 @@ class DBNetworking {
         
         // Creo la richiesta
         var request = URLRequest(url: url)
-        request.httpMethod = requestType.uppercased()
-        
-        let boundaryUUID = UUID().uuidString
-        let boundaryString = "Boundary-" + boundaryUUID
-        
-        // Configuro la richiesta per inviargli dei dati in formato JSON
-        request.setValue("multipart/form-data; boundary=" + boundaryString, forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = requestType
         
         if let authToken = authToken {
             request.setValue("Token " + authToken, forHTTPHeaderField: "Authorization")
         }
         
-        // Inserisco i parametri specificati
-        request.httpBody = body(withParameters: parameters, boundaryString: boundaryString, multipartFiles: multipartFiles)
+        // Configuro la richiesta per inviargli dei dati in formato JSON
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        // Creo il task
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
+        // Inserisco i parametri specificati
+        if requestType == "PUT" {
+            let body = parameters?.map { "\($0.key)=\($0.value)" }
+            request.httpBody = body?.joined().data(using: .utf8)
+        }
+        else {
+            // Multipart files
+            let boundaryUUID = UUID().uuidString
+            let boundaryString = "Boundary-" + boundaryUUID
             
-            var isSuccess = error == nil
+            request.setValue("multipart/form-data; boundary=" + boundaryString, forHTTPHeaderField: "Content-Type")
             
-            if let httpResponse = response as? HTTPURLResponse {
+            // Inserisco i parametri specificati
+            request.httpBody = body(withParameters: parameters, boundaryString: boundaryString, multipartFiles: multipartFiles)
+        }
+        
+        // Preparo il completion handler
+        let handler = {
+            (data: Data?, urlResponse: URLResponse?, error: Error?) in
+            
+            let response = DBNetworkingResponse()
+            response.success = error == nil
+            
+            if let httpResponse = urlResponse as? HTTPURLResponse {
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
-                    isSuccess = false
+                    response.success = false
                 }
             }
             
             // Controllo se il server ha restituito qualcosa
             if let data = data {
-                do {
-                    // Serializzo l'oggetto restituito dal server
-                    let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    
-                    // Restituisco il messaggio a chi ha chiamato la funzione
-                    let responseObject = DBNetworkingResponse()
-                    responseObject.data = jsonObject
-                    responseObject.success = isSuccess
-                    
-                    // Le operazioni di aggiornamento interfaccia vanno eseguite sul thread principale (main)
-                    DispatchQueue.main.async {
-                        completion?(responseObject)
-                    }
-                    
-                } catch let error {
-                    print(error)
-                    
-                    // Le operazioni di aggiornamento interfaccia vanno eseguite sul thread principale (main)
-                    DispatchQueue.main.async {
-                        // Restituisco l'errore a chi ha chiamato la funzione
-                        completion?(DBNetworkingResponse())
-                    }
-                }
-            } else {
-                // Le operazioni di aggiornamento interfaccia vanno eseguite sul thread principale (main)
-                DispatchQueue.main.async {
-                    // Restituisco l'errore a chi ha chiamato la funzione
-                    completion?(DBNetworkingResponse())
-                }
+                // Serializzo l'oggetto restituito dal server
+                response.data = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            }
+            
+            // Le operazioni di aggiornamento interfaccia vanno eseguite sul thread principale (main)
+            DispatchQueue.main.async {
+                // Restituisco il messaggio a chi ha chiamato la funzione
+                completion?(response)
             }
         }
         
-        // Avvio il task
-        task.resume()
+        // Creo e avvio il task
+        URLSession.shared.dataTask(with: request, completionHandler: handler).resume()
     }
     
     

@@ -52,4 +52,10 @@ extension User {
         return formatter.date(from: stringa) ?? Date()
     }
     
+    func setBirthDateAsString(_ dataStringa : Date) {
+        let revFormatter = DateFormatter()
+        revFormatter.dateFormat = "dd/MM/yyyy"
+        let stringa = revFormatter.string(from: dataStringa)
+        data_nascita = stringa
+    }
 }
