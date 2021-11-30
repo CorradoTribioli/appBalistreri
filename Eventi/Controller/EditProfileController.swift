@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileController: UIViewController {
+class EditProfileController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var txtFirstName: UITextField!
@@ -39,10 +39,69 @@ class EditProfileController: UIViewController {
         
         pckBirthDate.maximumDate = Date(timeIntervalSinceNow: -(3600*24*365*16))
         
+        //Divento delegate delle text field, per essere informato di quello che fa l'utente
+        self.txtFirstName.delegate = self
+        self.txtLastName.delegate = self
+        self.txtEmail.delegate = self
+        self.txtCity.delegate = self
+
+        
+        //configuro il tap recognizer
+        self.tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
+        self.view.addGestureRecognizer(self.tapRecognizer)
     }
     
+    //impostazioni per spostare la view
+    var frameIniziale = CGRect.zero
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //memorizzo il frame iniziale del navigation controller per spostare poi la tastiera
+        self.frameIniziale = self.navigationController?.view.frame ?? CGRect.zero
+    }
+    
+    //MARK: Textfield delegate
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //questa funzione delegate viene richiamata quando l'utente preme 'invio' dentro a una text field
+            
+            if textField == self.txtFirstName {
+                // ha premuto invio dal campo username
+            
+                if textField.text != "" {
+                    //sposto il focus automaticamente sul campo della password
+                    self.txtLastName.becomeFirstResponder()
+                }
+            } else if textField == self.txtLastName {
+                // ha premuto invio dal campo username
+            
+                if textField.text != "" {
+                    //sposto il focus automaticamente sul campo della password
+                    self.txtEmail.becomeFirstResponder()
+                }
+            } else if textField == self.txtEmail {
+                // ha premuto invio dal campo username
+            
+                if textField.text != "" {
+                    closeKeyboard()
+                }
+            } else if textField == self.txtCity {
+                if textField.text != "" {
+                    
+                        //chiudo la tastiera
+                        textField.resignFirstResponder()
+                        self.btnSave()
+                }
+            }
+            
+            return true
+        }
+    
+    //riconosce le gesture per poter chiudere la tastiera cliccando fuori dai campi di testo
+    var tapRecognizer = UITapGestureRecognizer()
+    
+    
     // MARK: - Actions
-    @IBAction func btnSave(_ sender: Any) {
+    @IBAction func btnSave(_ sender: Any? = nil) {
         
         // 1. Prendere i dati modificati dall'utente
         let userToUpdate = createUserToUpdate()
@@ -51,6 +110,30 @@ class EditProfileController: UIViewController {
         sendUpdatedUserToServer(userToUpdate)
     }
     
+    
+    //funzione mainContainer che si alza
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.txtCity {
+            //sposto la view principale verso l'alto con animazione
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+                self.navigationController?.view.frame.origin.y = self.frameIniziale.origin.y - 200
+            }, completion: nil)
+        }
+    }
+    
+    //funzione mainContainer che si abbassa
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //sposto la view principale nel punto d'origine con l'animazione
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.navigationController?.view.frame.origin.y = self.frameIniziale.origin.y
+        }, completion: nil)
+    }
+    
+    
+    //tab ovunque per chiudere la tastiera
+    @objc private func closeKeyboard() {
+        self.view.endEditing(true)
+    }
     // MARK: - Network
     
     private func createUserToUpdate() -> User {
@@ -115,11 +198,28 @@ class EditProfileController: UIViewController {
         if userToUpdate.nome != nil {
             parametersToSend["nome"] = userToUpdate.nome
         }
+        if userToUpdate.cognome != nil {
+            parametersToSend["cognome"] = userToUpdate.cognome
+        }
+        if userToUpdate.citta != nil {
+            parametersToSend["città"] = userToUpdate.citta
+        }
+        
+        if userToUpdate.email != nil {
+            parametersToSend["email"] = userToUpdate.email
+        }
+        
+        if userToUpdate.data_nascita != nil {
+            parametersToSend["data_nascita"] = userToUpdate.data_nascita
+        }
         
         ProgressHUD.show()
         ProgressHUD.animationType = .circleStrokeSpin
-        ProgressHUD.colorBackground = .lightGray
-        ProgressHUD.colorHUD = .systemGray
+        ProgressHUD.colorBackground = .red
+        ProgressHUD.colorHUD = .blue
+        
+        
+        
         
         // 4. Invio la richiesta PUT al server
         DBNetworking.jsonPut(url: url, authToken: token, parameters: parametersToSend) {
@@ -134,6 +234,12 @@ class EditProfileController: UIViewController {
             }
             
             // La richiesta è andata a buon fine
+            
+            // lancio una notifica a tutta l'app per informare che l'utente connesso è stato aggiornato (e quindi va ricaricato)
+            let notification = Notification.Name("UpdateLoggedUserNotification")
+            NotificationCenter.default.post(name: notification, object: nil)
+            
+            // chiudo il view controller di modifica profilo
             self.dismiss(animated: true)
         }
         
@@ -150,5 +256,8 @@ class EditProfileController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
+    
 
 }

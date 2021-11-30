@@ -74,7 +74,7 @@ class DBNetworking {
         // Inserisco i parametri specificati
         if requestType == "PUT" {
             let body = parameters?.map { "\($0.key)=\($0.value)" }
-            request.httpBody = body?.joined().data(using: .utf8)
+            request.httpBody = body?.joined(separator: "&").data(using: .utf8)
         }
         else {
             // Multipart files
