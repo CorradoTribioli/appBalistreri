@@ -487,13 +487,20 @@
                             <constraint firstItem="zkJ-3i-JTM" firstAttribute="trailing" secondItem="Yph-cw-Rdy" secondAttribute="trailing" id="lO2-GI-CQk"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Hexound" id="gfc-aM-BLy">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="plus.square.dashed" catalog="system" id="MGD-oW-ilY">
+                            <connections>
+                                <segue destination="UID-WV-2dm" kind="presentation" id="3fY-hr-50C"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" width="86.333333333333258" id="MhA-Ai-62o">
                             <connections>
                                 <segue destination="fyo-qv-QNg" kind="presentation" id="rvu-eS-1hf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="WelcomeLabel" destination="nb2-Ge-H1H" id="qZ2-qI-sn6"/>
                         <outlet property="iconCart" destination="MhA-Ai-62o" id="L9j-L1-whU"/>
@@ -503,6 +510,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLO-Ta-w09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1786.1538461538462" y="361.13744075829385"/>
+        </scene>
+        <!--Crea Evento (1/4)-->
+        <scene sceneID="J3p-uD-6Gb">
+            <objects>
+                <viewController id="9Av-jO-eHN" customClass="CreateEventNameController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcq-Va-Cpy">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="lZT-vN-Vca">
+                                <rect key="frame" x="16" y="104" width="342" height="417"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fo9-sy-PGu">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="62.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCs-ZB-5LC">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome dell'evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6CB-qL-gbZ">
+                                                <rect key="frame" x="0.0" y="28.333333333333343" width="342" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E85-Ri-fLa">
+                                        <rect key="frame" x="0.0" y="94.333333333333329" width="342" height="228.33333333333337"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrizione:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLD-0Z-zJT">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I5Q-sa-on3">
+                                                <rect key="frame" x="0.0" y="28.333333333333314" width="342" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cbF-QJ-gI7">
+                                        <rect key="frame" x="0.0" y="354.66666666666669" width="342" height="62.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prezzo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvc-t0-UGi">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prezzo (vuoto=gratis)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-4E-nlq">
+                                                <rect key="frame" x="0.0" y="28.333333333333314" width="342" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X9T-cs-lYi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lZT-vN-Vca" secondAttribute="trailing" constant="32" id="YNQ-qd-iCv"/>
+                            <constraint firstItem="lZT-vN-Vca" firstAttribute="leading" secondItem="X9T-cs-lYi" secondAttribute="leading" constant="16" id="sRd-rW-dZp"/>
+                            <constraint firstItem="lZT-vN-Vca" firstAttribute="top" secondItem="X9T-cs-lYi" secondAttribute="top" constant="16" id="xLC-YU-Fv0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crea Evento (1/4)" id="OdD-yQ-s1P">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="xmark" catalog="system" id="R1i-Dp-A0C">
+                            <connections>
+                                <action selector="btnClose:" destination="9Av-jO-eHN" id="rkS-e1-dnL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" id="Wok-W9-m3u">
+                            <connections>
+                                <action selector="btnNext:" destination="9Av-jO-eHN" id="EKT-Kt-rJl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtName" destination="6CB-qL-gbZ" id="zFR-bS-eqW"/>
+                        <segue destination="DhT-WA-dvK" kind="show" identifier="GoToNext" id="Nm4-Cs-sEZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JX5-4A-czw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3773.8461538461538" y="687.44075829383883"/>
         </scene>
         <!--Evento-->
         <scene sceneID="c7D-ZU-GRx">
@@ -532,7 +633,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-Gu-ixN">
-                                                <rect key="frame" x="157" y="37" width="80" height="21"/>
+                                                <rect key="frame" x="157" y="37" width="79" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -685,7 +786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guR-1g-BWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="712"/>
+            <point key="canvasLocation" x="1786" y="-368"/>
         </scene>
         <!--Carrello-->
         <scene sceneID="afV-lX-h0y">
@@ -1145,6 +1246,224 @@
             </objects>
             <point key="canvasLocation" x="2773.8461538461538" y="1442.4170616113743"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qzp-z8-ArF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="UID-WV-2dm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C0T-Af-tq9">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Av-jO-eHN" kind="relationship" relationship="rootViewController" id="eaL-Li-AtN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRJ-sN-YWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844.6153846153843" y="687.44075829383883"/>
+        </scene>
+        <!--Crea Evento (2/4)-->
+        <scene sceneID="agA-z8-Dp1">
+            <objects>
+                <viewController id="DhT-WA-dvK" customClass="CreateEventDateController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kb2-ky-x5O">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-d3-yet">
+                                <rect key="frame" x="16" y="104" width="358" height="369"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hch-XF-hWH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B0j-d3-yet" firstAttribute="leading" secondItem="Hch-XF-hWH" secondAttribute="leading" constant="16" id="CMf-xu-yAX"/>
+                            <constraint firstItem="B0j-d3-yet" firstAttribute="top" secondItem="Hch-XF-hWH" secondAttribute="top" constant="16" id="N8E-fz-bGx"/>
+                            <constraint firstItem="Hch-XF-hWH" firstAttribute="trailing" secondItem="B0j-d3-yet" secondAttribute="trailing" constant="16" id="n6e-cW-zWS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crea Evento (2/4)" id="Vif-oP-cv4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="jJ5-YU-A08">
+                            <connections>
+                                <action selector="btnBack:" destination="DhT-WA-dvK" id="slf-My-nCb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" image="arrow.forward" catalog="system" id="6OK-2C-b7e">
+                            <connections>
+                                <action selector="btnNext:" destination="DhT-WA-dvK" id="UlQ-r7-AkB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="B0j-d3-yet" id="M8z-fh-BKJ"/>
+                        <segue destination="r8n-WX-UPw" kind="show" identifier="GoToNext" id="pG7-Uh-vtj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIe-fD-kCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4584.6153846153848" y="686.72985781990519"/>
+        </scene>
+        <!--Crea Evento (3/4)-->
+        <scene sceneID="8ib-J4-wiQ">
+            <objects>
+                <viewController id="r8n-WX-UPw" customClass="CreateEventAddressController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xCl-dB-7ci">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DhA-ib-W5m">
+                                <rect key="frame" x="16" y="103.99999999999997" width="358" height="495.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indirizzo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaC-ns-Hze">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Meg-Re-mam">
+                                        <rect key="frame" x="0.0" y="40.333333333333343" width="358" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indirizzo dell'evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQx-I6-tqQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHN-hw-Plc">
+                                                <rect key="frame" x="314" y="0.0" width="44" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="YET-aN-ehy"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="location.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="btnGeoLocation:" destination="r8n-WX-UPw" eventType="touchUpInside" id="Xgs-Wf-Bnd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mappa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewZ-df-1pC">
+                                        <rect key="frame" x="0.0" y="94.333333333333343" width="358" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tocca sulla mappa per impostare l'indirizzo dell'evento" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jft-Dc-vdM">
+                                        <rect key="frame" x="0.0" y="134.66666666666666" width="358" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jQR-4H-HLJ">
+                                        <rect key="frame" x="0.0" y="195.33333333333331" width="358" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="H8Z-TI-81j"/>
+                                        </constraints>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M2K-UX-t96"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M2K-UX-t96" firstAttribute="trailing" secondItem="DhA-ib-W5m" secondAttribute="trailing" constant="16" id="H8E-1W-Z8P"/>
+                            <constraint firstItem="DhA-ib-W5m" firstAttribute="leading" secondItem="M2K-UX-t96" secondAttribute="leading" constant="16" id="VMj-RO-BvR"/>
+                            <constraint firstItem="DhA-ib-W5m" firstAttribute="top" secondItem="M2K-UX-t96" secondAttribute="top" constant="16" id="voZ-qf-4mv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crea Evento (3/4)" id="KmQ-uu-9XK">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="Dmg-rL-3ya">
+                            <connections>
+                                <action selector="btnBack:" destination="r8n-WX-UPw" id="1EA-W2-Aei"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" image="arrow.forward" catalog="system" id="Kzn-xb-MYC">
+                            <connections>
+                                <action selector="btnNext:" destination="r8n-WX-UPw" id="7YB-fC-0NK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnGeoLocation" destination="DHN-hw-Plc" id="Dhu-ts-C6L"/>
+                        <outlet property="mapView" destination="jQR-4H-HLJ" id="Enl-Cq-KoN"/>
+                        <outlet property="txtAddress" destination="uQx-I6-tqQ" id="Hg0-Gx-2dY"/>
+                        <segue destination="Cd3-rw-HjH" kind="show" identifier="GoToNext" id="iRI-Jp-3hO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dxh-N0-DeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5464.6153846153848" y="686.72985781990519"/>
+        </scene>
+        <!--Crea Evento (4/4)-->
+        <scene sceneID="hgG-Da-lGo">
+            <objects>
+                <viewController id="Cd3-rw-HjH" customClass="CreateEventCoverController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PvK-a0-ja4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tqb-BR-7cO">
+                                <rect key="frame" x="16" y="103.99999999999997" width="358" height="372.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copertina dell'evento:*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgG-Pr-KlS">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vwy-XE-35D">
+                                        <rect key="frame" x="0.0" y="36.333333333333343" width="358" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="VOg-oS-QkW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exu-S0-PhK">
+                                        <rect key="frame" x="0.0" y="252.33333333333331" width="358" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="VLI-y7-wqM"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Scegli una foto">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnChooseCover:" destination="Cd3-rw-HjH" eventType="touchUpInside" id="ndp-FZ-eau"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i6e-AF-V0D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tqb-BR-7cO" firstAttribute="leading" secondItem="i6e-AF-V0D" secondAttribute="leading" constant="16" id="EAm-np-PPg"/>
+                            <constraint firstItem="tqb-BR-7cO" firstAttribute="top" secondItem="i6e-AF-V0D" secondAttribute="top" constant="16" id="OMb-JI-CYK"/>
+                            <constraint firstItem="i6e-AF-V0D" firstAttribute="trailing" secondItem="tqb-BR-7cO" secondAttribute="trailing" constant="16" id="fuS-vo-qBr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crea Evento (4/4)" id="FGn-2N-OOM">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="mmK-vr-ZDC">
+                            <connections>
+                                <action selector="btnBack:" destination="Cd3-rw-HjH" id="DXj-cj-EHt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" image="arrow.forward" catalog="system" id="tPg-xg-ceq">
+                            <connections>
+                                <action selector="btnNext:" destination="Cd3-rw-HjH" id="fH1-jj-Idk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imgCover" destination="vwy-XE-35D" id="JU5-AD-B2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RIg-X3-HSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6440" y="686.72985781990519"/>
+        </scene>
     </scenes>
     <color key="tintColor" red="0.30997067080000001" green="0.88235644040000005" blue="0.80442299179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
@@ -1155,13 +1474,17 @@
         <image name="Profile" width="20" height="25"/>
         <image name="Show" width="32" height="26"/>
         <image name="address" width="24" height="25"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="bg-gradient" width="375" height="778"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="facebook" width="200" height="200"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="google" width="200" height="200"/>
         <image name="instagram" width="200" height="200"/>
+        <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="logo" width="143" height="143"/>
+        <image name="plus.square.dashed" catalog="system" width="128" height="114"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

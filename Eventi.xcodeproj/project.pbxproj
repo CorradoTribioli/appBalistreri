@@ -11,6 +11,10 @@
 		1B00473E2659202E0053DEFD /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00473D2659202E0053DEFD /* Users.swift */; };
 		1B00F17C266B7ACC009F4D0E /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00F17B266B7ACC009F4D0E /* LoginHelper.swift */; };
 		1B00F180266B89F8009F4D0E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00F17F266B89F8009F4D0E /* SplashController.swift */; };
+		1B0A1260275FB364007F7FB3 /* CreateEventNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A125F275FB364007F7FB3 /* CreateEventNameController.swift */; };
+		1B0A1263275FB39A007F7FB3 /* CreateEventDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1262275FB39A007F7FB3 /* CreateEventDateController.swift */; };
+		1B0A1265275FB3AE007F7FB3 /* CreateEventAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1264275FB3AE007F7FB3 /* CreateEventAddressController.swift */; };
+		1B0A1267275FB3BE007F7FB3 /* CreateEventCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1266275FB3BE007F7FB3 /* CreateEventCoverController.swift */; };
 		1B1708B7263416A400ACD20F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1708B6263416A400ACD20F /* AppDelegate.swift */; };
 		1B1708B9263416A400ACD20F /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1708B8263416A400ACD20F /* WelcomeController.swift */; };
 		1B1708BC263416A400ACD20F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1708BA263416A400ACD20F /* Main.storyboard */; };
@@ -37,6 +41,10 @@
 		1B00473D2659202E0053DEFD /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		1B00F17B266B7ACC009F4D0E /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		1B00F17F266B89F8009F4D0E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		1B0A125F275FB364007F7FB3 /* CreateEventNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventNameController.swift; sourceTree = "<group>"; };
+		1B0A1262275FB39A007F7FB3 /* CreateEventDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventDateController.swift; sourceTree = "<group>"; };
+		1B0A1264275FB3AE007F7FB3 /* CreateEventAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventAddressController.swift; sourceTree = "<group>"; };
+		1B0A1266275FB3BE007F7FB3 /* CreateEventCoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventCoverController.swift; sourceTree = "<group>"; };
 		1B1708B3263416A400ACD20F /* Eventi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1708B6263416A400ACD20F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1708B8263416A400ACD20F /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
@@ -93,12 +101,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1B0A125E275FB2EF007F7FB3 /* CreateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				1B0A125F275FB364007F7FB3 /* CreateEventNameController.swift */,
+				1B0A1262275FB39A007F7FB3 /* CreateEventDateController.swift */,
+				1B0A1264275FB3AE007F7FB3 /* CreateEventAddressController.swift */,
+				1B0A1266275FB3BE007F7FB3 /* CreateEventCoverController.swift */,
+			);
+			path = CreateEvent;
+			sourceTree = "<group>";
+		};
 		1B1708AA263416A400ACD20F = {
 			isa = PBXGroup;
 			children = (
 				1B1708B5263416A400ACD20F /* Eventi */,
 				1B1708B4263416A400ACD20F /* Products */,
 				1B1708CC26341D3D00ACD20F /* fonts */,
+				1B0A125E275FB2EF007F7FB3 /* CreateEvent */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,17 +281,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0A1267275FB3BE007F7FB3 /* CreateEventCoverController.swift in Sources */,
 				1B00473E2659202E0053DEFD /* Users.swift in Sources */,
 				1B889F24264FDE7600D9B47D /* AlertHelper.swift in Sources */,
 				1B2805CA2715D9E300025943 /* CartHelper.swift in Sources */,
 				1B1708B9263416A400ACD20F /* WelcomeController.swift in Sources */,
 				1B889F22264FC8A700D9B47D /* HomeController.swift in Sources */,
 				1B85DE6D267DF44A0089C14D /* EventController.swift in Sources */,
+				1B0A1260275FB364007F7FB3 /* CreateEventNameController.swift in Sources */,
 				1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */,
+				1B0A1265275FB3AE007F7FB3 /* CreateEventAddressController.swift in Sources */,
 				1B5168642744172D00105C6E /* EditProfileController.swift in Sources */,
 				1BA0C28826904D4000AFF72F /* MapPin.swift in Sources */,
 				1B00F180266B89F8009F4D0E /* SplashController.swift in Sources */,
 				1B87D7C826469E6600CC68BB /* LoginController.swift in Sources */,
+				1B0A1263275FB39A007F7FB3 /* CreateEventDateController.swift in Sources */,
 				1B6E65B026871F5A00FE7899 /* UIImageViewExtension.swift in Sources */,
 				1B1708B7263416A400ACD20F /* AppDelegate.swift in Sources */,
 				1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */,
