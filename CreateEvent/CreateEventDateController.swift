@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateEventDateController: UIViewController {
+    
+    var eventToCreate: CreateEvent!
 
     //MARK: - Outlets
     
@@ -22,6 +24,19 @@ class CreateEventDateController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    private func fillEventToCreate() {
+        
+        let dataSelezionata = self.datePicker.date
+        
+        
+        let formatter = DateFormatter()
+        
+        //decido il formato della data che voglio
+        formatter.dateFormat = "dd/MM/yyyy' 'HH:mm:SS"
+        
+        self.eventToCreate.timestamp = formatter.string(from: dataSelezionata)
+        
+    }
     //MARK: - Actions
     
     @IBAction func btnBack(_ sender: Any) {
@@ -30,19 +45,23 @@ class CreateEventDateController: UIViewController {
     }
     @IBAction func btnNext(_ sender: Any) {
         //passo alla prossima schermata
+        self.fillEventToCreate()
         self.performSegue(withIdentifier: "GoToNext", sender: self)
     }
     
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // questta funzione viene richiamata automaticamente dallo storyboard quando si passa
+        // da un view controller all'altro
+        if let nextController = segue.destination as? CreateEventAddressController {
+            // la prossima pagina è quella della data
+            
+            // gli passo l'evento in fase di creazione
+            nextController.eventToCreate = self.eventToCreate
+        }
     }
-    */
+
 
 }

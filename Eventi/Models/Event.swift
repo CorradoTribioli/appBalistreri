@@ -50,7 +50,7 @@ extension Event {
             let date = formatter.date(from: timestamp ?? "")
             
             //decido il formato della data che voglio
-            formatter.dateFormat = "dd/MM/yyyy' ' HH:mm:SS"
+            formatter.dateFormat = "dd/MM/yyyy' 'HH:mm:SS"
             return formatter.string(from: date ?? Date())
         }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class CreateEventCoverController: UIViewController {
     
+    var eventToCreate: CreateEvent!
+    
     //MARK: - Outlets
     
     @IBOutlet weak var imgCover: UIImageView!
