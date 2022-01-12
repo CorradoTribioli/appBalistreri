@@ -35,6 +35,7 @@
 		1BE9B77D274D5C5700696BEF /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9B77C274D5C5700696BEF /* ProgressHUD.swift */; };
 		1BFD6FD92674A3F800788F67 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FD82674A3F800788F67 /* ProfileController.swift */; };
 		1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD6FDA2674AECF00788F67 /* Event.swift */; };
+		1BFE35DC27722EE000333DC2 /* TrisGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFE35DB27722EE000333DC2 /* TrisGameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		1BE9B77C274D5C5700696BEF /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		1BFD6FD82674A3F800788F67 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		1BFD6FDA2674AECF00788F67 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1BFE35DB27722EE000333DC2 /* TrisGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrisGameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				1B85DE6C267DF44A0089C14D /* EventController.swift */,
 				1B2805CB2715EC3F00025943 /* CartController.swift */,
 				1B5168632744172D00105C6E /* EditProfileController.swift */,
+				1BFE35DB27722EE000333DC2 /* TrisGameController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				1B85DE6D267DF44A0089C14D /* EventController.swift in Sources */,
 				1B0A1260275FB364007F7FB3 /* CreateEventNameController.swift in Sources */,
 				1BFD6FDB2674AECF00788F67 /* Event.swift in Sources */,
+				1BFE35DC27722EE000333DC2 /* TrisGameController.swift in Sources */,
 				1B0A1265275FB3AE007F7FB3 /* CreateEventAddressController.swift in Sources */,
 				1B5168642744172D00105C6E /* EditProfileController.swift in Sources */,
 				1BA0C28826904D4000AFF72F /* MapPin.swift in Sources */,

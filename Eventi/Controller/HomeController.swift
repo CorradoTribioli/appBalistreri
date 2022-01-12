@@ -17,11 +17,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var WelcomeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var iconCart: UIBarButtonItem!
+    @IBOutlet weak var btnGame: UIBarButtonItem!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Nasccondo il pulsante del gioco
+        self.btnGame.title=""
+        
+        
         //cambio il colore della tabBar e navigationBar
         self.tabBarController?.tabBar.barTintColor = UIColor.black
         self.tabBarController?.tabBar.tintColor = .white
