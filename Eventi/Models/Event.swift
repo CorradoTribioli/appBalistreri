@@ -53,6 +53,17 @@ extension Event {
             formatter.dateFormat = "dd/MM/yyyy' 'HH:mm:SS"
             return formatter.string(from: date ?? Date())
         }
+    var date: Date? {
+        let formatter = DateFormatter()
+        
+        //questo è il formato della data come la manda il server
+        formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:SS"
+        
+        //converto la stringa della datain un oggetto "Date"
+        let date = formatter.date(from: timestamp ?? "")
+        
+        return date
+    }
 }
 
 extension Event : Equatable, Comparable {

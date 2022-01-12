@@ -22,6 +22,14 @@ class CreateEventDateController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.datePicker.date = self.eventToCreate.date ?? Date()
+        
+        //impedisco di creare eventi nel passato
+        datePicker.minimumDate = Date()
+        
+        //impedisco di creare eventi nel futuro
+        datePicker.maximumDate = Date()+3000000
     }
     
     private func fillEventToCreate() {
@@ -32,7 +40,7 @@ class CreateEventDateController: UIViewController {
         let formatter = DateFormatter()
         
         //decido il formato della data che voglio
-        formatter.dateFormat = "dd/MM/yyyy' 'HH:mm:SS"
+        formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:SS"
         
         self.eventToCreate.timestamp = formatter.string(from: dataSelezionata)
         
@@ -40,6 +48,7 @@ class CreateEventDateController: UIViewController {
     //MARK: - Actions
     
     @IBAction func btnBack(_ sender: Any) {
+        self.fillEventToCreate()
         //torno alla pagina precedente
         self.navigationController?.popViewController(animated: true)
     }

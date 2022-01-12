@@ -11,9 +11,10 @@ import UIKit
 //carico le librerie della mappa:
 import MapKit
 
-class CreateEventAddressController: UIViewController {
+class CreateEventAddressController: UIViewController, UITextFieldDelegate {
     var eventToCreate: CreateEvent!
-
+    
+    let locationManager = CLLocationManager()
     
     //MARK: - Outlets
     
@@ -28,9 +29,16 @@ class CreateEventAddressController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        //chiedo il permesso per accedere alla poszione dell'utente
+        self.locationManager.requestWhenInUseAuthorization()
+        // mostro il pallino della posizione dell'utente
+        self.mapView.showsUserLocation = true
+        
         //setup UI
         self.btnGeoLocation.setTitle("", for: .normal)
         self.mapView.layer.cornerRadius = 16
+        
+        self.txtAddress.delegate = self
     }
     
     //MARK: - Actions
@@ -45,7 +53,12 @@ class CreateEventAddressController: UIViewController {
     }
     @IBAction func btnNext(_ sender: Any) {
         //passo alla prossima schermata
-        self.performSegue(withIdentifier: "GoToNext", sender: self)
+        if txtAddress.text != "" {
+            self.performSegue(withIdentifier: "GoToNext", sender: self)
+        } else {
+            AlertHelper.showSimpleAlert(message: "L'indirizzo è obbligatorio", viewController: self)
+        }
+        
     }
     
 
