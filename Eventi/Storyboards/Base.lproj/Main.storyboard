@@ -1488,7 +1488,7 @@
                                 <action selector="btnBack:" destination="Cd3-rw-HjH" id="DXj-cj-EHt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Procedi" image="arrow.forward" catalog="system" id="tPg-xg-ceq">
+                        <barButtonItem key="rightBarButtonItem" title="Procedi" image="arrow.forward" catalog="system" id="tPg-xg-ceq" customClass="Crea">
                             <connections>
                                 <action selector="btnNext:" destination="Cd3-rw-HjH" id="fH1-jj-Idk"/>
                             </connections>
@@ -1496,6 +1496,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imgCover" destination="vwy-XE-35D" id="JU5-AD-B2y"/>
+                        <segue destination="NV5-Gd-Vei" kind="show" identifier="GoToNext" id="0Ir-0i-lpp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIg-X3-HSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1843,6 +1844,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiP-jr-aKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2870.7692307692305" y="-857.34597156398104"/>
+        </scene>
+        <!--Create Event Confirm Controller-->
+        <scene sceneID="u2i-cK-68e">
+            <objects>
+                <viewController id="NV5-Gd-Vei" customClass="CreateEventConfirmController" customModule="Eventi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5j3-bB-UAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK5-x2-qUb">
+                                <rect key="frame" x="16" y="397" width="358" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bFg-7o-zxj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Conferma crea evento">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnConfirm:" destination="NV5-Gd-Vei" eventType="touchUpInside" id="wmU-sd-X69"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="msa-n8-4jF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BK5-x2-qUb" firstAttribute="centerY" secondItem="5j3-bB-UAJ" secondAttribute="centerY" id="8TR-6z-D2f"/>
+                            <constraint firstItem="msa-n8-4jF" firstAttribute="trailing" secondItem="BK5-x2-qUb" secondAttribute="trailing" constant="16" id="Ckf-GF-ftT"/>
+                            <constraint firstItem="BK5-x2-qUb" firstAttribute="leading" secondItem="msa-n8-4jF" secondAttribute="leading" constant="16" id="Yzy-DL-z2F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pfv-xd-ixX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLa-nz-hC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7246.1538461538457" y="686.72985781990519"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.30997067080000001" green="0.88235644040000005" blue="0.80442299179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

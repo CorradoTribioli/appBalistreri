@@ -41,6 +41,13 @@ class CreateEventCoverController: UIViewController, UIImagePickerControllerDeleg
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
+        //passo alla prossima schermata
+        if self.eventToCreate.coverToUpload != nil {
+            self.performSegue(withIdentifier: "GoToNext", sender: self)
+        } else {
+            AlertHelper.showSimpleAlert(message: "La cover è obbligatoria", viewController: self)
+        }
+        
         
     }
     @IBAction func btnChooseCover(_ sender: Any) {
