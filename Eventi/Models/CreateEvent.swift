@@ -9,5 +9,7 @@
 import UIKit
 
 class CreateEvent: Event {
-
+    
+    // l'immagine jpeg da inviare al server
+    var coverToUpload: UIImage?
 }

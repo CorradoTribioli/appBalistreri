@@ -52,6 +52,10 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Consenti l&apos;accesso alla tua posizione per vedere dove sei sulla mappa</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Consenti l&apos;acesso alla fotocamera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Consenti l&apos;accesso alle tue foto in galleria</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

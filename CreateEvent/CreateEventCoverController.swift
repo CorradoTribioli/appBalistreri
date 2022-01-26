@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEventCoverController: UIViewController {
+class CreateEventCoverController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var eventToCreate: CreateEvent!
     
@@ -23,9 +23,13 @@ class CreateEventCoverController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //setup UI
+        // carico l'immagine precedentemente selezionata
+        self.imgCover.isHidden = (self.eventToCreate.coverToUpload == nil) ? true : false
+        self.imgCover.image = self.eventToCreate.coverToUpload
         
-        self.imgCover.isHidden = true
+        //setup UI
+        self.imgCover.layer.cornerRadius = 12
+        self.imgCover.clipsToBounds = true
     }
     
     
@@ -40,9 +44,46 @@ class CreateEventCoverController: UIViewController {
         
     }
     @IBAction func btnChooseCover(_ sender: Any) {
-        
+        AlertHelper.showCameraActionSheet(viewController: self) {
+            (isCamera) in
+            
+            //creo il picker di sistema
+            let pickerController = UIImagePickerController()
+            
+            // divento delegate del picker, per ricevere la foto scattata o selezionata dall'utente
+            pickerController.delegate = self
+            
+            // operatore ternario per semplificare un IF
+            // se isCamera è true viene preso il valore dopo il "?"
+            // altrimenti viene preso il valore dopo i ":"
+            pickerController.sourceType = isCamera ? .camera : .photoLibrary
+            
+            self.present(pickerController, animated: true)
+        }
     }
     
+    // MARK: - UIImagePickerController delegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //l'utente ha annullato la selezione
+        // chiudo il controller del picker
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // l'utente ha scelto o scattato una foto
+        
+        // prendo la foto scelta
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.imgCover.isHidden = false
+            self.imgCover.image = image
+            
+            self.eventToCreate.coverToUpload = image
+        }
+        
+        // chiudo il controller del picker
+        picker.dismiss(animated: true)
+    }
 
     /*
     // MARK: - Navigation
