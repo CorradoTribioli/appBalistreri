@@ -62,6 +62,11 @@ class ProfileController: UIViewController {
     /// e aggiorna il database locale
     @objc private func updateLoggedUser() {
         
+        guard userToShow.id_utente == LoginHelper.loggedUser?.id_utente else {
+            // non bisogna aggiornare il profilo di altri utenti
+            return
+        }
+        
         // 1. l'indirizzo dell'API da richiamare
         let url = "https://edu.davidebalistreri.it/app/utente.php"
         

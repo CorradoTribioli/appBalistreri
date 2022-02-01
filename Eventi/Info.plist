@@ -24,10 +24,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Light.ttf</string>
-		<string>Roboto-Medium.ttf</string>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Bold.ttf</string>
+		<string>Poppins-ExtraLight.ttf</string>
+		<string>Poppins-Semibold.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-ExtraBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

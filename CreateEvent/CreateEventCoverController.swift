@@ -15,6 +15,7 @@ class CreateEventCoverController: UIViewController, UIImagePickerControllerDeleg
     //MARK: - Outlets
     
     @IBOutlet weak var imgCover: UIImageView!
+    @IBOutlet weak var btnChooseCover: UIButton!
     
     //MARK: - Setup
 
@@ -26,6 +27,9 @@ class CreateEventCoverController: UIViewController, UIImagePickerControllerDeleg
         // carico l'immagine precedentemente selezionata
         self.imgCover.isHidden = (self.eventToCreate.coverToUpload == nil) ? true : false
         self.imgCover.image = self.eventToCreate.coverToUpload
+        if(self.eventToCreate.coverToUpload != nil) {
+            btnChooseCover.setTitle("Seleziona un'altra foto", for: .normal)
+        }
         
         //setup UI
         self.imgCover.layer.cornerRadius = 12
@@ -86,20 +90,26 @@ class CreateEventCoverController: UIViewController, UIImagePickerControllerDeleg
             self.imgCover.image = image
             
             self.eventToCreate.coverToUpload = image
+            
+            //cambio il testo del pulsante
+            btnChooseCover.setTitle("Seleziona un'altra foto", for: .normal)
         }
         
         // chiudo il controller del picker
         picker.dismiss(animated: true)
     }
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // questta funzione viene richiamata automaticamente dallo storyboard quando si passa
+         // da un view controller all'altro
+         if let nextController = segue.destination as? CreateEventConfirmController {
+             // la prossima pagina è quella del confirm
+             
+             // gli passo l'evento in fase di creazione
+             nextController.eventToCreate = self.eventToCreate
+         }
+     }
 
 }

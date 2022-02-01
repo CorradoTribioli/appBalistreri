@@ -196,7 +196,7 @@ class CreateEventAddressController: UIViewController, UITextFieldDelegate {
         // questta funzione viene richiamata automaticamente dallo storyboard quando si passa
         // da un view controller all'altro
         if let nextController = segue.destination as? CreateEventCoverController {
-            // la prossima pagina è quella della data
+            // la prossima pagina è quella della cover
             
             // gli passo l'evento in fase di creazione
             nextController.eventToCreate = self.eventToCreate

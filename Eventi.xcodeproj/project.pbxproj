@@ -30,6 +30,10 @@
 		1B87D7CD2646A97E00CC68BB /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87D7CC2646A97E00CC68BB /* UIHelper.swift */; };
 		1B889F22264FC8A700D9B47D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F21264FC8A700D9B47D /* HomeController.swift */; };
 		1B889F24264FDE7600D9B47D /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B889F23264FDE7600D9B47D /* AlertHelper.swift */; };
+		1B8E96E327A9A86400491801 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E96DF27A9A5CA00491801 /* Poppins-ExtraBold.ttf */; };
+		1B8E96E427A9A86800491801 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E96E227A9A5CA00491801 /* Poppins-ExtraLight.ttf */; };
+		1B8E96E527A9A86A00491801 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E96E127A9A5CA00491801 /* Poppins-Regular.ttf */; };
+		1B8E96E627A9A87200491801 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E96E027A9A5CA00491801 /* Poppins-SemiBold.ttf */; };
 		1BA0C28826904D4000AFF72F /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0C28726904D4000AFF72F /* MapPin.swift */; };
 		1BA0C28B26905F2500AFF72F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0C28A26905F2500AFF72F /* EventCell.swift */; };
 		1BE34BD727A1B55F00D16E1E /* CreateEventConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE34BD627A1B55F00D16E1E /* CreateEventConfirmController.swift */; };
@@ -55,10 +59,6 @@
 		1B1708BD263416A600ACD20F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B1708C0263416A600ACD20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1708C2263416A600ACD20F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B1708C826341CF900ACD20F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		1B1708C926341CF900ACD20F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		1B1708CA26341CF900ACD20F /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		1B1708CB26341CFA00ACD20F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		1B2805C92715D9E300025943 /* CartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		1B2805CB2715EC3F00025943 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		1B4911492768F641004FFF08 /* CreateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
@@ -69,6 +69,10 @@
 		1B87D7CC2646A97E00CC68BB /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		1B889F21264FC8A700D9B47D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1B889F23264FDE7600D9B47D /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		1B8E96DF27A9A5CA00491801 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1B8E96E027A9A5CA00491801 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		1B8E96E127A9A5CA00491801 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		1B8E96E227A9A5CA00491801 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		1BA0C28726904D4000AFF72F /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		1BA0C28A26905F2500AFF72F /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1BE34BD627A1B55F00D16E1E /* CreateEventConfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventConfirmController.swift; sourceTree = "<group>"; };
@@ -158,10 +162,10 @@
 		1B1708CC26341D3D00ACD20F /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1B1708CA26341CF900ACD20F /* Roboto-Light.ttf */,
-				1B1708CB26341CFA00ACD20F /* Roboto-Medium.ttf */,
-				1B1708C826341CF900ACD20F /* Roboto-Regular.ttf */,
-				1B1708C926341CF900ACD20F /* Roboto-Bold.ttf */,
+				1B8E96DF27A9A5CA00491801 /* Poppins-ExtraBold.ttf */,
+				1B8E96E227A9A5CA00491801 /* Poppins-ExtraLight.ttf */,
+				1B8E96E127A9A5CA00491801 /* Poppins-Regular.ttf */,
+				1B8E96E027A9A5CA00491801 /* Poppins-SemiBold.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -277,7 +281,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8E96E427A9A86800491801 /* Poppins-ExtraLight.ttf in Resources */,
+				1B8E96E627A9A87200491801 /* Poppins-SemiBold.ttf in Resources */,
+				1B8E96E327A9A86400491801 /* Poppins-ExtraBold.ttf in Resources */,
 				1B1708C1263416A600ACD20F /* LaunchScreen.storyboard in Resources */,
+				1B8E96E527A9A86A00491801 /* Poppins-Regular.ttf in Resources */,
 				1B1708BE263416A600ACD20F /* Assets.xcassets in Resources */,
 				1B1708BC263416A400ACD20F /* Main.storyboard in Resources */,
 			);

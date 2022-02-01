@@ -40,14 +40,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        //aggiorno gli eventi da visualizzare
-        self.updateEvents()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // la pagina sta comparendo (o ricomparendo) sullo schermo
+        
+        //aggiorno gli eventi da visualizzare
+        self.updateEvents()
         
         // Aggiorno l'icona del carrello
         if #available(iOS 13.0, *) {
